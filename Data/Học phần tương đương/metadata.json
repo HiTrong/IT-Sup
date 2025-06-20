@@ -1,0 +1,24 @@
+{
+  "tlhocphan.pdf": {
+    "source": "https://fit.hcmute.edu.vn/ArticleId/2fdffaed-c283-4ebe-81d2-bd911f8a66be/bang-mon-hoc-tuong-duong-ctdt-150tc-ctdt-132tc",
+    "tags": [
+      "học phần",
+      "học phần tương đương",
+      "bảng môn học",
+      "tín chỉ tối đa",
+      "tín chỉ tối thiểu"
+    ],
+    "description": "Tài liệu về học phần tương đương, bao gồm bảng môn học tương đương và quy định về tín chỉ tối đa và tối thiểu mà sinh viên có thể đăng ký trong một học kỳ."
+  },
+  "diemi.pdf": {
+    "source": "https://aao.hcmute.edu.vn/ArticleId/8c08524f-1e00-4ce9-93c2-20a00bb162a6/don-xin-nhan-va-tra-diem-i",
+    "tags": [
+      "điểm",
+      "điểm i",
+      "đơn xin nhận điểm i",
+      "đơn xin trả điểm i",
+      "thời gian trả điểm i"
+    ],
+    "description": "Tài liệu hướng dẫn về điểm i, bao gồm đơn xin nhận và trả điểm i, cũng như thời gian trả điểm i."
+  }
+}

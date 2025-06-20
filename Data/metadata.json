@@ -1,0 +1,259 @@
+{
+  "Ban giám hiệu nhà trường": {
+    "description": "Đây là Agent chuyên trả lời các thông tin về hiệu trưởng, hiệu phó và địa chỉ liên lạc của họ.",
+    "tags": ["hiệu trưởng", "hiệu phó", "địa chỉ liên lạc của trường"]
+  },
+  "Bảo lưu": {
+    "description": "Agent chuyên trả lời các vấn đề về bảo lưu và tạm dừng học.",
+    "tags": [
+      "bảo lưu",
+      "tạm dừng học",
+      "điều kiện bảo lưu",
+      "thủ tục xin bảo lưu",
+      "quy trình tạm dừng học"
+    ]
+  },
+  "Chương trình đào tạo": {
+    "description": "Agent trả lời cho các vấn đề về chương trình đào tạo, các môn học của các ngành, các hệ trong khoa công nghệ thông tin",
+    "tags": [
+      "chương trình đào tạo",
+      "môn học",
+      "hệ đào tạo",
+      "các khóa",
+      "mô tả môn học trong chương trình",
+      "tín chỉ",
+      "thời gian đào tạo"
+    ]
+  },
+  "Chuyên đề doanh nghiệp": {
+    "description": "Agent trả lời hướng dẫn thực hiện chuyên đề doanh nghiệp: thời gian đăng ký học phần, các thực hiện, trọng số điểm tối đa",
+    "tags": ["thời gian đăng ký", "chuyên đề doanh nghiệp", "cách thực hiện"]
+  },
+  "Cuộc thi học thuật Hackathon mở rộng": {
+    "description": "Agent phục vụ cho câu hỏi về cuộc thi học thuật Hackathon mở rộng",
+    "tags": [
+      "hackathon",
+      "thể lệ",
+      "thông tin",
+      "nội dung",
+      "đối tượng",
+      "giải thưởng",
+      "cách đăng ký",
+      "yêu cầu sản phẩm"
+    ]
+  },
+  "Cuộc thi học thuật truyền thống Mastering IT": {
+    "description": "Agent trả lời câu hỏi về cuộc thi học thuật Mastering IT",
+    "tags": [
+      "mit",
+      "thể lệ",
+      "thông tin",
+      "nội dung",
+      "đối tượng",
+      "giải thưởng",
+      "mastering it"
+    ]
+  },
+  "Cuộc thi Sinh viên với An toàn Thông tin": {
+    "description": "Agent trả lời câu hỏi về cuộc thi sinh viên với an toàn thông tin",
+    "tags": [
+      "CTF",
+      "CTF HCMUTE",
+      "Sinh viên với an toàn thông tin",
+      "thể lệ",
+      "thông tin",
+      "nội dung"
+    ]
+  },
+  "Đào tạo chuyên ngành": {
+    "description": "Agent trả lời vấn đề đào tạo, đăng ký chuyên ngành cho sinh viên",
+    "tags": [
+      "Đào tạo chuyên ngành",
+      "điều kiện xét chuyên ngành",
+      "hướng dẫn đăng ký chuyên ngành",
+      "danh sách chuyên ngành",
+      "thời gian đăng ký"
+    ]
+  },
+  "Giảng viên": {
+    "description": "Agent trả lời các câu hỏi về giảng viên của khoa",
+    "tags": [
+      "giảng viên",
+      "khoa công nghệ thông tin",
+      "bộ môn",
+      "thông tin liên hệ giảng viên",
+      "danh sách giảng viên",
+      "chủ nhiệm bộ môn",
+      "phó chủ nhiệm bộ môn",
+      "danh sách nhóm nghiên cứu khoa học",
+      "nghiên cứu của giảng viên",
+      "đề tài nghiên cứu của giảng viên",
+      "ban chủ nhiệm khoa",
+      "trưởng khoa",
+      "phó trưởng khoa",
+      "thư ký khoa"
+    ]
+  },
+  "Giấy tờ": {
+    "description": "Agent trả lời về các vấn đề giấy tờ",
+    "tags": [
+      "giấy tờ sinh viên",
+      "đăng ký tại trang online",
+      "hướng dẫn đăng ký",
+      "giấy xác nhận sinh viên",
+      "giấy vay vốn",
+      "Đơn xin ở Ký túc xá Đại học Quốc Gia Thành phố Hồ Chí Minh",
+      "Giấy chứng nhận sinh viên",
+      "Quy trình nhận giấy đăng ký",
+      "thời gian nhận giấy"
+    ]
+  },
+  "Hoạt động điểm rèn luyện và công tác xã hội trong khoa": {
+    "description": "Agent tư vấn về hoạt động điểm rèn luyện và công tác xã hội",
+    "tags": [
+      "đrl",
+      "ctxh",
+      "tham gia hoạt động",
+      "điểm rèn luyện",
+      "điểm công tác xã hội",
+      "các chương trình",
+      "cách kiếm điểm",
+      "danh sách các chương trình",
+      "tình nguyện"
+    ]
+  },
+  "Học bổng khuyến khích học tập": {
+    "description": "Agent giúp đỡ vấn đề về học bổng khuyến khích học tập",
+    "tags": [
+      "học bổng",
+      "học bổng khuyến khích học tập",
+      "điều kiện xét",
+      "loại học bổng",
+      "đối tượng xét học bổng",
+      "tiêu chí xét học bổng",
+      "quy trình xét học bổng"
+    ]
+  },
+  "Học phần ngoại ngữ": {
+    "description": "Agent trả lời các câu hỏi về học phần ngoại ngữ như anh văn 1,2,...",
+    "tags": [
+      "học phần ngoại ngữ",
+      "anh văn",
+      "tiếng anh",
+      "quy định ngoại ngữ",
+      "kỹ năng giao tiếp tiếng Anh",
+      "quy đổi ngoại ngữ",
+      "tiếng Nhật"
+    ]
+  },
+  "Học phần tương đương": {
+    "description": "Agent trả lời về các môn học tương đương và xin điểm I",
+    "tags": [
+      "học phần tương đương",
+      "bảng môn học",
+      "tín chỉ tối đa",
+      "tín chỉ tối thiểu",
+      "điểm i",
+      "đơn xin nhận điểm i",
+      "đơn xin trả điểm i"
+    ]
+  },
+  "Học phí": {
+    "description": "Agent tư vấn về học phí",
+    "tags": ["học phí", "thời gian nộp học phí", "cách đóng học phí"]
+  },
+  "Khóa luận tốt nghiệp (KLTN)": {
+    "description": "Agent trả lời các vấn đề về Khóa luận tốt nghiệp",
+    "tags": [
+      "trình bày khóa luận tốt nghiệp",
+      "khóa luận tốt nghiệp",
+      "quy định về trình bày",
+      "điều kiện thực hiện",
+      "kltn"
+    ]
+  },
+  "Kỷ luật khiển trách": {
+    "description": "Agent trả lời về vấn đề kỷ luật khiển trách",
+    "tags": [
+      "kỷ luật",
+      "quy định",
+      "nội dung vi phạm",
+      "xử lý kỷ luật",
+      "hình thức kỷ luật"
+    ]
+  },
+  "Lý luận chính trị": {
+    "description": "Agent giải đáp về lý luận chính trị",
+    "tags": ["sinh hoạt chính trị", "sinh hoạt đầu khóa", "bài thu hoạch"]
+  },
+  "Nghiên cứu khoa học (NCKH)": {
+    "description": "Agent trả lời các câu hỏi về nghiên cứu khoa học",
+    "tags": [
+      "NCKH",
+      "Hướng dẫn nckh",
+      "Đề tài NCKH",
+      "điều kiện làm NCKH",
+      "đối tượng NCKH",
+      "nghiên cứu khoa học",
+      "quy trình đăng ký nghiên cứu khoa học",
+      "trách nhiệm và quyền lợi sinh viên nghiên cứu khoa học",
+      "danh sách nhóm nghiên cứu khoa học",
+      "nghiên cứu của giảng viên"
+    ]
+  },
+  "Ngoại ngữ đầu ra (NNĐR, AVĐR)": {
+    "description": "Agent tư vấn ngoại ngữ (tiếng Anh, tiếng Nhật, ...) đầu ra",
+    "tags": [
+      "ngoại ngữ đầu ra",
+      "anh văn đầu ra",
+      "Tiếng Nhật đầu ra",
+      "chuẩn đầu ra ngoại ngữ",
+      "quy đổi ngoại ngữ đầu ra"
+    ]
+  },
+  "Thẻ sinh viên": {
+    "description": "Agent hướng dẫn về thẻ sinh viên",
+    "tags": ["cấp lại thẻ sinh viên", "thẻ sinh viên", "thẻ sv"]
+  },
+  "Thực tập tốt nghiệp (TTTN)": {
+    "description": "Agent chi tiết về thực tập tốt nghiệp",
+    "tags": [
+      "học phần thực tập tốt nghiệp",
+      "hướng dẫn thực hiện",
+      "quy định",
+      "cách đăng ký",
+      "thực tập",
+      "thời gian đăng ký"
+    ]
+  },
+  "Tiểu luận chuyên ngành (TLCN)": {
+    "description": "Agent hướng dẫn làm tiểu luận chuyên ngành",
+    "tags": [
+      "hướng dẫn làm tiểu luận chuyên ngành",
+      "hướng dẫn làm luận văn tốt nghiệp",
+      "mục đích làm luận văn",
+      "các bước làm luận văn",
+      "điều kiện làm"
+    ]
+  },
+  "Trang thông tin số": {
+    "description": "Agent quản lý các trang thông tin số như fanpage, website,...",
+    "tags": [
+      "trang thông tin số",
+      "fanpage khoa",
+      "cổng thông tin hội, đoàn khoa",
+      "sinh viên 5 tốt",
+      "group",
+      "diễn đàn"
+    ]
+  },
+  "Xét tốt nghiệp": {
+    "description": "Agent hướng dẫn về xét tốt nghiệp",
+    "tags": [
+      "Xét tốt nghiệp",
+      "Điều kiện xét tốt nghiệp",
+      "Thời gian nhận bằng",
+      "Đợt xét tạm thời"
+    ]
+  }
+}
