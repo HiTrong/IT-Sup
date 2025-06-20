@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+
+  <title> IT-Sup </title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  
+  <!-- Responsive styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}" />
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="{{ url_for('static', filename='images/hero-bg.png')}}" alt="">
+      </div>
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/home">
+            <span>
+              IT-Sup
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="/home">Trang chủ <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/introduction"> Giới thiệu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/chatbot">Chatbot</a>
+              </li>
+              <li class="nav-item">
+                {% if current_user.is_authenticated %}
+                <a class="nav-link" href="/admin"> <i class="fa fa-user" aria-hidden="true"></i> Admin</a>
+                {% else %}
+                <a class="nav-link" href="/login"> <i class="fa fa-user" aria-hidden="true"></i> Đăng nhập</a>
+                {% endif %}
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      IT-Sup <br>
+                      Tư vấn sinh viên
+                    </h1>
+                    <p>
+                        Bạn là sinh viên khoa CNTT của trường ĐH SPKT? Bạn có thắc mắc muốn hỏi trực tuyến nhưng không tìm thấy ứng dụng hỗ trợ? Hãy thử ngay IT-Sup!
+                    </p>
+                    <div class="btn-box">
+                      <a href="/chatbot" class="btn1">
+                        Thử ngay!
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{ url_for('static', filename='images/slider-img1.png')}}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      IT-Sup <br>
+                      Hỗ trợ hết mình
+                    </h1>
+                    <p>
+                      Bạn đang ngại ngùng vì không dám đặt câu hỏi? IT-Sup hỗ trợ bạn hết mình mà không lưu lại bất kỳ dữ liệu hay đòi hỏi chi phí gì! Hãy thử ngay nhé!
+                    </p>
+                    <div class="btn-box">
+                        <a href="/chatbot" class="btn1">
+                            Thử ngay!
+                        </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{ url_for('static', filename='images/slider-img2.png')}}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      IT-Sup <br>
+                      Có hỗ trợ giọng nói
+                    </h1>
+                    <p>
+                      Hãy thử ngay và cho IT-Sup biết trải nghiệm của bạn nhé! Góp ý của bạn là động lực cho IT-Sup phát triển đó!
+                    </p>
+                    <div class="btn-box">
+                        <a href="/chatbot" class="btn1">
+                            Thử ngay!
+                        </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{ url_for('static', filename='images/slider-img3.png')}}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#customCarousel1" data-slide-to="1"></li>
+          <li data-target="#customCarousel1" data-slide-to="2"></li>
+        </ol>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            Các <span>tính năng</span> của chúng tôi
+          </h2>
+          <p>
+            IT-Sup có rất nhiều tính năng đặc biệt được thiết kế để phục vụ sinh viên khoa Công nghệ Thông tin của trường Đại học Sư Phạm Kỹ Thuật.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/s1.png')}}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Cập nhật thông tin liên tục
+                </h5>
+                <p>
+                  Mỗi khi khoa, trường có thông tin mới, chúng tôi dễ dàng cập nhật và áp dụng vào IT-Sup để các câu trả lời không bị lỗi thời!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/s2.png')}}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Tư vấn bằng giọng nói
+                </h5>
+                <p>
+                  Giải đáp mọi thắc mắc thật dễ dàng với giọng nói mà không cần lo lắng. Phù hợp với mọi độ tuổi đặc biệt là phụ huynh.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/s3.png')}}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Đa nền tảng
+                </h5>
+                <p>
+                  Ngoài ứng dụng Web, IT-Sup còn có mặt ở nền tảng Mobile cho cả Android và IOS để hỗ trợ tốt hơn.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="heading_container heading_center">
+        <h2>
+          Về <span>IT-Sup</span>
+        </h2>
+        <p>
+          Theo khảo sát cho thấy, rất nhiều sinh viên khoa CNTT cần được tư vấn về nhiều vấn đề trong quá trình học tập tại ngôi trường Đại học Sư Phạm Kỹ thuật TP.HCM. Điều đó đã chứng minh cho chúng ta thấy rằng cần có một công cụ phục vụ sinh viên nhanh chóng và chính xác. Đó là lí do IT-Sup ra đời.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/about-img.png')}}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h3>
+              Vậy IT-Sup là gì?
+            </h3>
+            <p>
+              IT-Sup là một ứng dụng Chatbot được xây dựng dựa trên mô hình ngôn ngữ lớn - Qwen 2.5 phiên bản 14 tỷ tham số với mục tiêu là phục vụ và tư vấn cho sinh viên khoa Công nghệ Thông tin.
+              Đây là một sản phẩm đại diện cho kết quả nghiên cứu và hoàn thiện sản phẩm trong quá trình thực hiện khóa luận tốt nghiệp của chúng tôi. 
+            </p>
+            <p>
+              Để trải nghiệm ngay bây giờ vui lòng nhấn vào nút bên dưới!
+            </p>
+            <a href="/chatbot">
+              Trải nghiệm ngay!
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Thông tin liên hệ
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Trường Đại học Sự phạm Kỹ thuật
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                    (+84) Cập nhật sau 
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  itsupport_hcmute@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="/home">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="/home">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="/home">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="/home">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Quyền riêng tư
+            </h4>
+            <p>
+                Chúng tôi cam kết bảo vệ quyền riêng tư của người dùng khi sử dụng sản phẩm/dịch vụ của chúng tôi. Chính sách này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin cá nhân của bạn.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Liên kết
+            </h4>
+            <div class="info_links">
+              <a class="active" href="/home">
+                Trang chủ
+              </a>
+              <a class="" href="/introduction">
+                Giới thiệu
+              </a>
+              <a class="" href="/chatbot">
+                Chatbot
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col ">
+          <h4>
+            Nhận thông tin mới
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Nhập email" />
+            <button type="submit">
+              Đăng ký
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js')}}"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/custom.js')}}"></script>
+
+</body>
+
+</html>

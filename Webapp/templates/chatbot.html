@@ -1,0 +1,259 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+
+  <title> IT-Sup </title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  
+  <!-- Responsive styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}" />
+
+
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="{{ url_for('static', filename='images/hero-bg.png')}}" alt="">
+      </div>
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/home">
+            <span>
+              IT-Sup
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item">
+                <a class="nav-link" href="/home">Trang chủ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/introduction"> Giới thiệu <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/chatbot">Chatbot</a>
+              </li>
+              <li class="nav-item">
+                {% if current_user.is_authenticated %}
+                <a class="nav-link" href="/admin"> <i class="fa fa-user" aria-hidden="true"></i> Admin</a>
+                {% else %}
+                <a class="nav-link" href="/login"> <i class="fa fa-user" aria-hidden="true"></i> Đăng nhập</a>
+                {% endif %}
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- chatbot section -->
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chatbot/style.css')}}"/>
+
+      <div class="container-fluid h-100">
+        <div class="row justify-content-center h-100">		
+          <div class="col-md-12 col-xl-12 chat h-auto">  <!-- Tăng kích thước hộp chat -->
+            <div class="heading_container heading_center">
+              <h2>
+                  <span>IT-Sup</span> Chatbot
+              </h2>
+              <p class="mb-1">
+                Hãy chọn mô hình sẽ phục vụ bạn!
+              </p>
+            </div>
+            <div class="row text-center">
+              <!-- Mistral -->
+              <div class="col-md-6">
+                <a href="/chatbot/qwen" style="text-decoration: none; color: inherit;">
+                  <div class="model-card d-flex align-items-center">
+                    <img src="https://opencv.org/wp-content/uploads/2025/01/MIhJKlK5yVR3axxgE7_gHL-rsKjliShJKd3asUqg5KDdEsdOGut-9mCW4Ti1x7i2y8zCkxeZHQFR00sQg6BfYA.png" class="rounded-circle" width="100" height="100" alt="Mistral Logo">
+                    <div class="ml-3 text-left">
+                      <h4>🌀 Qwen 2.5</h4>
+                      <p>Qwen 2.5 (14 tỷ tham số) có thể chạy trực tiếp trên máy chủ cục bộ mà không cần sử dụng API trả phí, chỉ tiêu tốn tài nguyên phần cứng.</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- Gemini -->
+              <div class="col-md-6">
+                <a href="/chatbot/gemini" style="text-decoration: none; color: inherit;">
+                  <div class="model-card d-flex align-items-center">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/7cf51e188450701.65b6d6991d38d.png" class="rounded-circle" width="100" height="100" alt="Gemini Logo">
+                    <div class="ml-3 text-left">
+                      <h4>🌍 Gemini</h4>
+                      <p>Gemini do Google phát triển, hoạt động qua API với hiệu suất cao và phản hồi nhanh. Tuy nhiên, sử dụng API có thể phát sinh chi phí.</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end chatbot section -->
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Thông tin liên hệ
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Trường Đại học Sự phạm Kỹ thuật
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                    (+84) Cập nhật sau 
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  itsupport_hcmute@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="/home">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="/home">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="/home">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="/home">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Quyền riêng tư
+            </h4>
+            <p>
+                Chúng tôi cam kết bảo vệ quyền riêng tư của người dùng khi sử dụng sản phẩm/dịch vụ của chúng tôi. Chính sách này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin cá nhân của bạn.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Liên kết
+            </h4>
+            <div class="info_links">
+              <a href="/home">
+                Trang chủ
+              </a>
+              <a class="" href="/introduction">
+                Giới thiệu
+              </a>
+              <a class="" href="/chatbot">
+                Chatbot
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col ">
+          <h4>
+            Nhận thông tin mới
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Nhập email" />
+            <button type="submit">
+              Đăng ký
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js')}}"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/custom.js')}}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>

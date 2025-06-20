@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- [Head] start -->
+
+<head>
+  <title>IT-Sup Admin</title>
+  <!-- [Meta] -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Mantis is made using Bootstrap 5 design framework. Download the free admin template & use it for your project.">
+  <meta name="keywords" content="Mantis, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Bootstrap Admin Template">
+  <meta name="author" content="CodedThemes">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" id="main-font-link">
+
+<!-- [Font Awesome Icons] https://fontawesome.com/icons -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}" />
+<!-- [Template CSS Files] -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/style.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/style-preset.css') }}" />
+
+
+</head>
+<!-- [Head] end -->
+<!-- [Body] Start -->
+
+<body data-pc-preset="preset-1" data-pc-direction="ltr" data-pc-theme="light">
+  <!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+</div>
+<!-- [ Pre-loader ] End -->
+ <!-- [ Sidebar Menu ] start -->
+<nav class="pc-sidebar">
+  <div class="navbar-wrapper">
+    <div class="m-header">
+      <a href="/admin" class="b-brand text-primary">
+        <!-- ========   Change your logo from here   ============ -->
+        <span class="pc-mtext">IT-SUP ADMIN</span>
+      </a>
+    </div>
+    <div class="navbar-content">
+      <ul class="pc-navbar">
+        <li class="pc-item">
+          <a href="/admin" class="pc-link">
+            <span class="pc-micon"><i class="fa fa-columns"></i></span>
+            <span class="pc-mtext">Trang chủ</span>
+          </a>
+        </li>
+
+        <li class="pc-item pc-caption">
+          <label>Tính năng</label>
+        </li>
+        <li class="pc-item">
+          <a href="/admin/question" class="pc-link">
+            <span class="pc-micon"><i class="fa fa-question"></i></span>
+            <span class="pc-mtext">Trả lời câu hỏi</span>
+          </a>
+        </li>
+        <!-- <li class="pc-item">
+          <a href="/admin/docs" class="pc-link">
+            <span class="pc-micon"><i class="fa fa-file"></i></span>
+            <span class="pc-mtext">Cập nhật tài liệu</span>
+          </a>
+        </li> -->
+        <li class="pc-item">
+          <a href="/admin/historysms" class="pc-link">
+            <span class="pc-micon"><i class="fa fa-comments"></i></span>
+            <span class="pc-mtext">Lịch sử SMS</span>
+          </a>
+        </li>
+
+        <li class="pc-item pc-caption">
+          <label>Thao tác</label>
+        </li>
+        <li class="pc-item">
+          <a href="/admin/logout" class="pc-link">
+            <span class="pc-micon"><i class="fa fa-sign-out"></i></span>
+            <span class="pc-mtext">Đăng xuất</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- [ Sidebar Menu ] end --> <!-- [ Header Topbar ] start -->
+<header class="pc-header">
+  <div class="header-wrapper"> <!-- [Mobile Media Block] start -->
+<div class="me-auto pc-mob-drp">
+  <ul class="list-unstyled">
+    <!-- ======= Menu collapse Icon ===== -->
+    <li class="pc-h-item pc-sidebar-collapse">
+      <a href="#" class="pc-head-link ms-0" id="sidebar-hide">
+        <i class="fa fa-bars"></i>
+      </a>
+    </li>
+    <li class="pc-h-item pc-sidebar-popup">
+      <a href="#" class="pc-head-link ms-0" id="mobile-collapse">
+        <i class="fa fa-bars"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- [Mobile Media Block end] -->
+<div class="ms-auto">
+  <ul class="list-unstyled">
+    <li class="dropdown pc-h-item header-user-profile">
+      <a
+        class="pc-head-link dropdown-toggle arrow-none me-0"
+        data-bs-toggle="dropdown"
+        href="#"
+        role="button"
+        aria-haspopup="false"
+        data-bs-auto-close="outside"
+        aria-expanded="false"
+      >
+        <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="user-image" class="user-avtar">
+        <span>{{ current_user.fullname }}</span>
+      </a>
+      <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
+        <div class="dropdown-header">
+          <div class="d-flex mb-1">
+            <div class="flex-shrink-0">
+              <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="user-image" class="user-avtar wid-35">
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h6 class="mb-1">{{ current_user.fullname }}</h6>
+              <span>Admin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+ </div>
+</header>
+<!-- [ Header ] end -->
+
+
+
+  <!-- [ Main Content ] start -->
+  <div class="pc-container">
+    <div class="pc-content">
+      <!-- [ breadcrumb ] start -->
+      <div class="page-header">
+        <div class="page-block">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <div class="page-header-title">
+                <h5 class="m-b-10">Trả lời câu hỏi</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [ breadcrumb ] end -->
+      <!-- [ Main Content ] start -->
+
+      {% for question, details in unknown_question.items() %}
+        {% if not details.solve %}
+        <div class="card">
+            <div class="card-header">
+                <h5>{{ question }}</h5>
+            </div>
+            <div class="card-body">
+                <form class="question-form was-validated">
+                    <input type="hidden" name="question" value="{{ question }}">
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label class="form-label" for="inputAddress">Số điện thoại</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="{{ details.phone_number | join(", ") }}" readonly>
+                        </div>
+                        <div class="form-group">
+                          <label for="validationTextarea" class="form-label">Câu trả lời</label>
+                          <textarea class="form-control is-invalid" name="answer" id="validationTextarea"
+                            placeholder="Xin chào,..." required></textarea>
+                          <div class="invalid-feedback"> Hãy nhập câu trả lời chính xác</div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-4">Trả lời</button>
+                </form>
+                <p class="response-message"></p>
+            </div>
+        </div>
+        {% endif %}
+      {% endfor %}
+
+
+      </div>
+    </div>
+  </div>
+  <!-- [ Main Content ] end -->
+  <footer class="pc-footer">
+    <div class="footer-wrapper container-fluid">
+      <div class="row">
+        <div class="col-auto my-1">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- [Page Specific JS] start -->
+  <script src="{{ url_for('static', filename='js/admin/plugins/apexcharts.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/admin/pages/dashboard-default.js')}}"></script>
+
+  <!-- [Page Specific JS] end -->
+  <!-- Required Js -->
+  <script src="{{ url_for('static', filename='js/admin/plugins/popper.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/admin/plugins/simplebar.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/admin/plugins/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/admin/fonts/custom-font.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/admin/pcoded.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/admin/plugins/feather.min.js')}}"></script>
+
+  
+  <script>layout_change('light');</script>
+  
+  <script>change_box_container('false');</script>
+    
+  <script>layout_rtl_change('false');</script>
+  
+  <script>preset_change("preset-1");</script>
+  
+  <script>font_change("Public-Sans");</script>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+        $(".question-form").submit(function (event) {
+            event.preventDefault();  // Ngăn chặn reload trang ngay lập tức
+    
+            var form = $(this);
+            var question = form.find("input[name='question']").val();
+            var answer = form.find("textarea[name='answer']").val();
+            var responseMessage = form.siblings(".response-message");
+    
+            $.post("/admin/submit_answer", { question: question, answer: answer })
+            .done(function (data) {
+                // Hiển thị thông báo kết quả trả về từ server
+                if (data.status === "success") {
+                    responseMessage.text(data.message);
+                } else {
+                    responseMessage.text("Lỗi: " + data.message);
+                }
+                
+                // In ra kết quả trả về từ server trong console để kiểm tra
+                console.log("Kết quả trả về:", data);
+
+                // Xóa nội dung sau khi gửi
+                form.find("textarea").val("");
+
+                // Reload trang sau 2 giây để hiển thị cập nhật mới (nếu cần)
+                setTimeout(function () {
+                    location.reload();
+                }, 2000);
+            })
+            .fail(function () {
+                responseMessage.text("Gửi thất bại, thử lại!");
+                console.log("Có lỗi khi gửi yêu cầu tới server");
+            });
+        });
+    });
+    </script>
+    
+
+</body>
+<!-- [Body] end -->
+
+</html>

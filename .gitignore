@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+Webapp/env/
+Webapp/venv/
+Webapp/.env/
+Webapp/.venv/
+Webapp/instance/
+Webapp/__pycache__/
+
+# Environment Variables
+.env
+.venv
+
+# Database
+*.sqlite3
+*.db
+
+# Logs
+*.log

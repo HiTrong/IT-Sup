@@ -1,0 +1,439 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+
+  <title> IT-Sup </title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  
+  <!-- Responsive styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}" />
+
+
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="{{ url_for('static', filename='images/hero-bg.png')}}" alt="">
+      </div>
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/home">
+            <span>
+              IT-Sup
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item">
+                <a class="nav-link" href="/home">Trang chủ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/introduction"> Giới thiệu <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/chatbot">Chatbot</a>
+              </li>
+              <li class="nav-item">
+                {% if current_user.is_authenticated %}
+                <a class="nav-link" href="/admin"> <i class="fa fa-user" aria-hidden="true"></i> Admin</a>
+                {% else %}
+                <a class="nav-link" href="/login"> <i class="fa fa-user" aria-hidden="true"></i> Đăng nhập</a>
+                {% endif %}
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- chatbot section -->
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="heading_container heading_center">
+        <h2>
+            <span>IT-Sup</span> Chatbot
+        </h2>
+        <p>
+          Hãy thử ngay và cho chúng tôi biết trải nghiệm của bạn nhé!
+        </p>
+      </div>
+      
+      <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chatbot/style.css')}}"/>
+
+      <div class="container-fluid h-100">
+        <div class="row justify-content-center h-100">		
+          <div class="col-md-12 col-xl-12 chat">  <!-- Tăng kích thước hộp chat -->
+            <div class="card">
+              <div class="card-header msg_head">
+                <div class="d-flex bd-highlight">
+                  <div class="img_cont">
+                    <img src="https://opencv.org/wp-content/uploads/2025/01/MIhJKlK5yVR3axxgE7_gHL-rsKjliShJKd3asUqg5KDdEsdOGut-9mCW4Ti1x7i2y8zCkxeZHQFR00sQg6BfYA.png" class="rounded-circle user_img">
+                    <span class="online_icon"></span>
+                  </div>
+                  <div class="user_info">
+                    <span>IT-Sup (Qwen 2.5)</span>
+                    <p>Hãy hỏi tôi về các vấn đề thuộc khoa Công nghệ Thông tin của trường đại học Sư Phạm Kỹ Thuật!</p>
+                  </div>
+                </div>
+              </div>
+              <div id="messageFormeight" class="card-body msg_card_body"></div>
+              <div class="card-footer">
+                <form id="messageArea" class="input-group">
+                  <input type="text" id="text" name="msg" placeholder="Nhập câu hỏi của bạn..." autocomplete="off" class="form-control type_msg" required/>
+                  <div class="input-group-append">
+                    <button type="button" onclick="startListening()" id="microphone" class="input-group-text mic_btn"><i class="fas fa-microphone"></i></button>
+                    <button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        function scrollToBottom() {
+          var messageBody = document.getElementById("messageFormeight");
+          messageBody.scrollTop = messageBody.scrollHeight;
+        }
+
+        function speak(text) {
+            let speech = new SpeechSynthesisUtterance();
+            speech.text = text;
+            speech.lang = "vi-VN";
+            speech.rate = 1.15;
+            window.speechSynthesis.speak(speech);
+        }
+
+        function startListening() {
+          if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+              alert("Trình duyệt không hỗ trợ nhận diện giọng nói.");
+              return;
+          }
+      
+          let recognition = null;
+          if ("SpeechRecognition" in window) {
+              recognition = new SpeechRecognition();
+          } else if ("webkitSpeechRecognition" in window) {
+              recognition = new webkitSpeechRecognition();
+          } else {
+              alert("Trình duyệt không hỗ trợ nhận diện giọng nói.");
+              return;
+          }
+          recognition.lang = "vi-VN";
+          
+          let micButton = document.getElementById("microphone");
+
+          recognition.onstart = function() {
+              console.log("Bắt đầu nhận diện...");
+              micButton.classList.add("recording");
+          };
+      
+          recognition.onresult = function(event) {
+              micButton.classList.remove("recording");
+              let transcript = event.results[0][0].transcript;
+              // Send message
+              const date = new Date();
+              const hour = date.getHours();
+              const minute = date.getMinutes();
+              const str_time = hour + ":" + minute;
+              var rawText = transcript;
+
+              $("#text").prop("disabled", true);
+              $("#send").prop("disabled", true);
+              $("#microphone").prop("disabled", true);
+
+              var userHtml =
+              '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' +
+              rawText +
+              '<span class="msg_time_send">' +
+              str_time +
+              '</span></div><div class="img_cont_msg"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUW0u5Eiiy3oM6wcpeEE6sXCzlh8G-tX1_Iw&s" class="rounded-circle user_img_msg"></div></div>';
+  
+              $("#text").val("");
+              $("#messageFormeight").append(userHtml);
+              scrollToBottom();
+  
+              $.ajax({
+                data: {
+                  msg: rawText,
+                },
+                type: "POST",
+                url: "/chatbot/qwen/get_response",
+              }).done(function (data) {
+                var botHtml =
+                  '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://opencv.org/wp-content/uploads/2025/01/MIhJKlK5yVR3axxgE7_gHL-rsKjliShJKd3asUqg5KDdEsdOGut-9mCW4Ti1x7i2y8zCkxeZHQFR00sQg6BfYA.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' +
+                  data.answer.replace(/\n/g, "<br>") +
+                  '<span class="msg_time">' +
+                  str_time +
+                  "</span></div></div>";
+                $("#messageFormeight").append($.parseHTML(botHtml));
+                var speak_text = data.speak
+                var referencesHtml = "";
+                if (Object.keys(data.url_dict).length > 0) {
+                  for (var source in data.url_dict) {
+                    if (data.url_dict.hasOwnProperty(source)) {
+                      referencesHtml += `🔹 ${source} <a href="${data.url_dict[source]}" target="_blank">[Truy cập]</a><br>`;
+                    }
+                  }
+                  var url_botHtml = 
+                  '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://opencv.org/wp-content/uploads/2025/01/MIhJKlK5yVR3axxgE7_gHL-rsKjliShJKd3asUqg5KDdEsdOGut-9mCW4Ti1x7i2y8zCkxeZHQFR00sQg6BfYA.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' +
+                  referencesHtml +
+                  '<span class="msg_time">' +
+                  str_time +
+                  "</span></div></div>";
+                  $("#messageFormeight").append($.parseHTML(url_botHtml));
+                  speak_text = speak_text + " Bạn có thể đọc thêm các tài liệu bên dưới:"
+                }
+                scrollToBottom();
+                speak(speak_text);
+              }).always(function () {
+                $("#text").prop("disabled", false);
+                $("#send").prop("disabled", false);
+                $("#microphone").prop("disabled", false);
+                $("#text").focus();
+              });
+          };
+      
+          recognition.onerror = function(event) {
+              console.error("Lỗi nhận diện giọng nói:", event.error);
+              alert("Không thể nhận diện giọng nói. Vui lòng thử lại.");
+              micButton.classList.remove("recording");
+          };
+      
+          recognition.start();
+      }
+  
+        $(document).ready(function () {
+          $("#messageArea").on("submit", function (event) {
+            const date = new Date();
+            const hour = date.getHours();
+            const minute = date.getMinutes();
+            const str_time = hour + ":" + minute;
+            var rawText = $("#text").val();
+
+            $("#text").prop("disabled", true);
+            $("#send").prop("disabled", true);
+            $("#microphone").prop("disabled", true);
+  
+            var userHtml =
+              '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' +
+              rawText +
+              '<span class="msg_time_send">' +
+              str_time +
+              '</span></div><div class="img_cont_msg"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUW0u5Eiiy3oM6wcpeEE6sXCzlh8G-tX1_Iw&s" class="rounded-circle user_img_msg"></div></div>';
+  
+            $("#text").val("");
+            $("#messageFormeight").append(userHtml);
+  
+            scrollToBottom();
+  
+            $.ajax({
+              data: {
+                msg: rawText,
+              },
+              type: "POST",
+              url: "/chatbot/qwen/get_response",
+            }).done(function (data) {
+              var botHtml =
+                  '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://opencv.org/wp-content/uploads/2025/01/MIhJKlK5yVR3axxgE7_gHL-rsKjliShJKd3asUqg5KDdEsdOGut-9mCW4Ti1x7i2y8zCkxeZHQFR00sQg6BfYA.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' +
+                  data.answer.replace(/\n/g, "<br>") +
+                  '<span class="msg_time">' +
+                  str_time +
+                  "</span></div></div>";
+                $("#messageFormeight").append($.parseHTML(botHtml));
+                var speak_text = data.speak
+                var referencesHtml = "";
+                if (Object.keys(data.url_dict).length > 0) {
+                  for (var source in data.url_dict) {
+                    if (data.url_dict.hasOwnProperty(source)) {
+                      referencesHtml += `🔹 ${source} <a href="${data.url_dict[source]}" target="_blank">[Truy cập]</a> <br>`;
+                    }
+                  }
+                  var url_botHtml = 
+                  '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://opencv.org/wp-content/uploads/2025/01/MIhJKlK5yVR3axxgE7_gHL-rsKjliShJKd3asUqg5KDdEsdOGut-9mCW4Ti1x7i2y8zCkxeZHQFR00sQg6BfYA.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' +
+                  referencesHtml +
+                  '<span class="msg_time">' +
+                  str_time +
+                  "</span></div></div>";
+                  $("#messageFormeight").append($.parseHTML(url_botHtml));
+                  speak_text = speak_text + " Bạn có thể đọc thêm các tài liệu bên dưới:"
+                }
+                scrollToBottom();
+                speak(speak_text);
+              }).always(function () {
+                $("#text").prop("disabled", false);
+                $("#send").prop("disabled", false);
+                $("#microphone").prop("disabled", false);
+                $("#text").focus();
+              });
+            event.preventDefault();
+          });
+        });
+      </script>
+      
+    </div>
+  </section>
+
+  <!-- end chatbot section -->
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Thông tin liên hệ
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Trường Đại học Sự phạm Kỹ thuật
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                    (+84) Cập nhật sau 
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  itsupport_hcmute@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="/home">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="/home">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="/home">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="/home">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Quyền riêng tư
+            </h4>
+            <p>
+                Chúng tôi cam kết bảo vệ quyền riêng tư của người dùng khi sử dụng sản phẩm/dịch vụ của chúng tôi. Chính sách này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin cá nhân của bạn.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Liên kết
+            </h4>
+            <div class="info_links">
+              <a href="/home">
+                Trang chủ
+              </a>
+              <a class="" href="/introduction">
+                Giới thiệu
+              </a>
+              <a class="" href="/chatbot">
+                Chatbot
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col ">
+          <h4>
+            Nhận thông tin mới
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Nhập email" />
+            <button type="submit">
+              Đăng ký
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js')}}"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/custom.js')}}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>
