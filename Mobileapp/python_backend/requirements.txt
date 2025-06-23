@@ -1,0 +1,8 @@
+flask
+flask-cors
+speechrecognition 
+gtts
+av 
+numpy 
+soundfile
+flask_session
