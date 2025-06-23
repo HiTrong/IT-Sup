@@ -23,3 +23,114 @@ Webapp/__pycache__/
 
 # Logs
 *.log
+
+# dependencies
+/node_modules
+/.expo
+/.expo-shared
+Mobileapp/node_modules
+Mobileapp/.expo
+Mobileapp/.expo-shared
+
+# testing
+/coverage
+Mobileapp/coverage
+
+# production
+/build
+/dist
+Mobileapp/build
+Mobileapp/dist
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.*.local
+Mobileapp/.DS_Store
+Mobileapp/.env
+Mobileapp/.env.local
+Mobileapp/.env.*.local
+
+# metro / babel / yarn
+.expo
+.expo-shared
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+expo-debug.log
+Mobileapp/.expo
+Mobileapp/.expo-shared
+Mobileapp/npm-debug.log*
+Mobileapp/yarn-debug.log*
+Mobileapp/yarn-error.log*
+Mobileapp/expo-debug.log
+
+
+# macOS
+*.DS_Store
+Mobileapp/*.DS_Store
+
+# Android
+android/.gradle
+android/app/build
+android/build
+android/.idea
+android/local.properties
+android/.cxx
+android/.settings
+*.iml
+Mobileapp/android/.gradle
+Mobileapp/android/app/build
+Mobileapp/android/build
+Mobileapp/android/.idea
+Mobileapp/android/local.properties
+Mobileapp/android/.cxx
+Mobileapp/android/.settings
+Mobileapp/*.iml
+
+# iOS
+ios/Pods
+ios/build
+ios/Podfile.lock
+ios/*.xcodeproj/project.xcworkspace/
+ios/*.xcworkspace
+ios/.idea
+ios/.DS_Store
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+
+# Expo managed workflow
+.expo
+.expo-shared
+Mobileapp/.expo
+Mobileapp/.expo-shared
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# VSCode
+.vscode
+
+# Logs
+*.log
+
+# Watchman
+.watchmanconfig
+Mobileapp/.watchmanconfig
+
+# Firebase/Google Services
+google-services.json
+GoogleService-Info.plist
+Mobileapp/google-services.json
+Mobileapp/GoogleService-Info.plist
